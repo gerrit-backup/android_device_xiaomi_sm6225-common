@@ -92,12 +92,14 @@ BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
 
 BOARD_KERNEL_CMDLINE := \
     swinfo.fingerprint=$(LINEAGE_VERSION) \
-    mtdoops.fingerprint=$(LINEAGE_VERSION)
+    mtdoops.fingerprint=$(LINEAGE_VERSION) \
+    androidboot.selinux=permissive
 
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
-    androidboot.usbcontroller=4e00000.dwc3
+    androidboot.usbcontroller=4e00000.dwc3 \
+    androidboot.selinux=permissive
 
 # Kernel prebuilt
 TARGET_KERNEL_ARCH := arm64
